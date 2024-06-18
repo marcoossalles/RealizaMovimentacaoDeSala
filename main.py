@@ -4,7 +4,7 @@ from Controller.ConectaBdTSE import ConectaBdTSE
 from Controller.ControlerTSE import ControlerTSE
 
 # Conectar ao banco de chamados
-string_conexao_bd_chamados = ConectaBdChamados(host='172.16.0.50', port='5432', user='rpa', password='Jump@@jet@', dbname='rpa')
+string_conexao_bd_chamados = ConectaBdChamados(host='', port='', user='', password='', dbname='')
 conexao_bd_chamados = string_conexao_bd_chamados.RealizaConexaoBdChamado()
 
 # Verificar se a conexão foi bem-sucedida
@@ -21,7 +21,7 @@ if lista_chamados is None or not lista_chamados:
     print("Lista está vazia!")
 
 # Conectar ao banco do TSE
-string_conexao_bd_tse = ConectaBdTSE(host='172.16.0.50', port='5432', user='rpa', password='Jump@@jet@', dbname='TSESalinasProducao')
+string_conexao_bd_tse = ConectaBdTSE(host='', port='', user='', password='', dbname='')
 conexao_bd_tse = string_conexao_bd_tse.RealizaConexaoBdTSE()
 
 # Instanciar a classe
