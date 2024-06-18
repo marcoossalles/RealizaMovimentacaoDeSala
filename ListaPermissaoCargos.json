@@ -1,0 +1,65 @@
+{
+  "PROMOTOR": {
+    "Idsetortrabalho": 1,
+    "Idcargo": 23,
+    "Exibelookuppromotormkt": true,
+    "Exibelookuppromotortlmkt": false,
+    "Exibelookupliner": false,
+    "Exibelookupcloser": false,
+    "Exibelookuppep": false
+  },
+  "LINER": {
+    "Idsetortrabalho": 11,
+    "Idcargo": 2,
+    "Exibelookuppromotormkt": false,
+    "Exibelookuppromotortlmkt": false,
+    "Exibelookupliner": true,
+    "Exibelookupcloser": true,
+    "Exibelookuppep": true
+  },
+  "CLOSER": {
+    "Idsetortrabalho": 11,
+    "Idcargo": 2,
+    "Exibelookuppromotormkt": false,
+    "Exibelookuppromotortlmkt": false,
+    "Exibelookupliner": true,
+    "Exibelookupcloser": true,
+    "Exibelookuppep": true
+  },
+  "FTP": {
+    "Idsetortrabalho": 11,
+    "Idcargo": 2,
+    "Exibelookuppromotormkt": false,
+    "Exibelookuppromotortlmkt": false,
+    "Exibelookupliner": true,
+    "Exibelookupcloser": true,
+    "Exibelookuppep": true
+  },
+  "CONSULTOR": {
+    "Idsetortrabalho": 11,
+    "Idcargo": 2,
+    "Exibelookuppromotormkt": false,
+    "Exibelookuppromotortlmkt": false,
+    "Exibelookupliner": true,
+    "Exibelookupcloser": true,
+    "Exibelookuppep": true
+  },
+  "OPERADOR DE TELEMARKETING": {
+    "Idsetortrabalho": 61,
+    "Idcargo": 20,
+    "Exibelookuppromotormkt": false,
+    "Exibelookuppromotortlmkt": true,
+    "Exibelookupliner": false,
+    "Exibelookupcloser": false,
+    "Exibelookuppep": false
+  },
+  "CAPTADOR": {
+    "Idsetortrabalho": 9,
+    "Idcargo": 1,
+    "Exibelookuppromotormkt": true,
+    "Exibelookuppromotortlmkt": false,
+    "Exibelookupliner": false,
+    "Exibelookupcloser": false,
+    "Exibelookuppep": false
+  }
+}
