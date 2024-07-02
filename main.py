@@ -2,6 +2,7 @@ from Controller.ConectaBdChamados import ConectaBdChamados
 from Controller.BuscaChamados import BuscaChamados
 from Controller.ConectaBdTSE import ConectaBdTSE
 from Controller.ControlerTSE import ControlerTSE
+import os
 
 # Conectar ao banco de chamados
 string_conexao_bd_chamados = ConectaBdChamados(host='', port='', user='', password='', dbname='')
@@ -34,9 +35,9 @@ lista_ids_funcionarios = classe_tse.BuscaIdsFuncionario(lista_chamados)
 lista_ids_funcionarios_desvinculados = classe_tse.DesvinculaSala(lista_ids_funcionarios)
 
 #Libera Sala de Vendas
-teste = classe_tse.LiberaSala(lista_ids_funcionarios_desvinculados)
+lista_processo_realizado_com_sucesso = classe_tse.LiberaSala(lista_ids_funcionarios_desvinculados)
 
 #Altera o status do processo
-classe_chamados.AlteraStatusBdChamados(teste)
+classe_chamados.AlteraStatusBdChamados(lista_processo_realizado_com_sucesso)
 # Desconectar do banco de dados
 string_conexao_bd_chamados.DesconectaBdChamados()

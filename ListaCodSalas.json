@@ -114,9 +114,10 @@
       "cod4": 229
     },
     "GAV RESORTS - MACEIO": {
-      "cod1": 208,
-      "cod2": 209,
-      "cod3": 207
+      "cod1": 242,
+      "cod2": 246,
+      "cod3": 243,
+      "cod4": 247
     },
     "GAV RESORTS - MURO ALTO": {
       "cod1": 181,
@@ -151,7 +152,11 @@
       "cod3": 69,
       "cod4": 68,
       "cod5": 202,
-      "cod6": 63
+      "cod6": 63,
+      "cod7": 244,
+      "cod8": 245,
+      "cod9": 248,
+      "cod10": 249
     },
     "GAV RESORTS - RECIFE": {
       "cod1": 79,
