@@ -2,7 +2,9 @@ from Controller.ConectaBdChamados import ConectaBdChamados
 from Controller.BuscaChamados import BuscaChamados
 from Controller.ConectaBdTSE import ConectaBdTSE
 from Controller.ControlerTSE import ControlerTSE
-import os
+import logging
+logging.basicConfig(filename='/home/gav/Projetos/Python/RealizaMovimentacaoSala/log.txt',level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 # Conectar ao banco de chamados
 string_conexao_bd_chamados = ConectaBdChamados(host='', port='', user='', password='', dbname='')
@@ -10,7 +12,7 @@ conexao_bd_chamados = string_conexao_bd_chamados.RealizaConexaoBdChamado()
 
 # Verificar se a conexão foi bem-sucedida
 if conexao_bd_chamados is None:
-    print("Não foi possível conectar ao banco de dados.")
+    logging.error("Não foi possível conectar ao banco de dados.")
     exit()
 
 # Instanciar a classe BuscaChamados
@@ -19,7 +21,8 @@ classe_chamados = BuscaChamados(conexao_bd_chamados)
 # Buscar a lista de chamados
 lista_chamados = classe_chamados.BuscaChamadosParaMovimentar()
 if lista_chamados is None or not lista_chamados:
-    print("Lista está vazia!")
+    logging.warning("Lista está vazia!")
+    exit()
 
 # Conectar ao banco do TSE
 string_conexao_bd_tse = ConectaBdTSE(host='', port='', user='', password='', dbname='')

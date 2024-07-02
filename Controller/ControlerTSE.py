@@ -2,6 +2,8 @@ import psycopg2
 import json
 from datetime import datetime
 import logging
+logging.basicConfig(filename='/home/gav/Projetos/Python/BuscaChamados/log.txt',level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 class ControlerTSE:
     def __init__(self, conexao_bd_tse):
@@ -22,9 +24,9 @@ class ControlerTSE:
                     if resultado:
                         lista_ids_funcionarios.append((resultado[0], chamado[1], chamado[2], chamado[3], chamado[4]))
                     else:
-                        print(f"Nenhum funcionário encontrado para o CPF: {chamado[4]}")
+                        logging.warning(f"Nenhum funcionário encontrado para o CPF: {chamado[4]}")
                 except psycopg2.Error as error:
-                    print(f"Erro ao realizar busca ID funcionario: {error}")
+                    logging.error(f"Erro ao realizar busca ID funcionario: {error}")
                     pass
             else:
                 try:
@@ -34,9 +36,9 @@ class ControlerTSE:
                     if resultado:
                         lista_ids_funcionarios.append((resultado[0], chamado[1], chamado[2], chamado[3], chamado[4]))
                     else:
-                        print(f"Nenhum funcionário encontrado para o CPF: {chamado[5]}")
+                        logging.warning(f"Nenhum funcionário encontrado para o CPF: {chamado[5]}")
                 except psycopg2.Error as error:
-                    print(f"Erro ao realizar busca ID funcionario: {error}")
+                    logging.error(f"Erro ao realizar busca ID funcionario: {error}")
                     pass
         return lista_ids_funcionarios
 
@@ -49,7 +51,7 @@ class ControlerTSE:
                 cursor.execute(query)
                 self.conexao_bd_tse.commit()
             except psycopg2.Error as error:
-                print(f"Erro ao desvincular sala:{item[0]} ERROR:{error}")
+                logging.error(f"Erro ao desvincular sala:{item[0]} ERROR:{error}")
                 lista_ids_funcionarios.remove(item)
                 pass
         return lista_ids_funcionarios
@@ -63,7 +65,7 @@ class ControlerTSE:
             resultado = None if retornoDoBanco == None else retornoDoBanco[0]
             return resultado
         except psycopg2.Error as error:
-            print(f"Ocorreu um erro: {error} ao verifica o id funcionario: {id_funcionario}, chava da sala: {chaveAtual}")
+            logging.error(f"Ocorreu um erro: {error} ao verifica o id funcionario: {id_funcionario}, chava da sala: {chaveAtual}")
             return True
 
 

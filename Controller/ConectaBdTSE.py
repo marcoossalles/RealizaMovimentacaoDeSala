@@ -1,4 +1,6 @@
 import psycopg2
+import logging
+logging.basicConfig(filename='/home/gav/Projetos/Python/BuscaChamados/log.txt',level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class ConectaBdTSE:
     def __init__(self, host, port, user, password, dbname):
@@ -20,10 +22,10 @@ class ConectaBdTSE:
             )
             print(f"Conexão bem-sucedida ao banco de dados {self.dbname}.")
         except psycopg2.OperationalError as e:
-            print(f"O erro '{e}' ocorreu ao tentar conectar ao banco de dados {self.dbname}.")
+            logging.error(f"O erro '{e}' ocorreu ao tentar conectar ao banco de dados {self.dbname}.")
         return self.conexao
 
     def DesconectaBdChamados(self):
         if self.conexao:
             self.conexao.close()
-            print(f"Conexão com o banco de dados {self.dbname} fechada.")
+            logging.info(f"Conexão com o banco de dados {self.dbname} fechada.")
